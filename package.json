@@ -1,5 +1,5 @@
 {
-  "name": "comp308-w2017-lesson4b",
+  "name": "week5",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -19,22 +19,22 @@
     "node": ">=6.0.0",
     "npm": ">=3.5.0"
   },
-  "description": "## Welcome to Lesson 4 - Intro to MongoDB",
+  "description": "Week 5 example",
   "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP308-W2017-Lesson4B.git"
+    "url": "git"
   },
   "keywords": [
     "NodeJS",
     "ExpressJS",
     "EJS"
   ],
-  "author": "Tom Tsiliopoulos",
+  "author": "Omid Khataee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP308-W2017-Lesson4B/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/CentennialCollege/COMP308-W2017-Lesson4B#readme"
+  "homepage": ""
 }
