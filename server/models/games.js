@@ -1,10 +1,10 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose'); // imports the mongoose npm package
 
 // create a model class
 let gameSchema = mongoose.Schema({
     name: String,
-    rating: Number,
-    cost: Number
+    rating: String,
+    cost: String
 },
 {
   collection: "games"

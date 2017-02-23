@@ -8,21 +8,24 @@ let bodyParser = require('body-parser');
 // import "mongoose"
 let mongoose = require('mongoose');
 
-// URI
-let URI = "mongodb://localhost/videogames";
+let config = require('./config/db');
 
-//let URI = "mongodb://thomas:123456@ds054999.mlab.com:54999/videogames";
+let URI = config.URI;
 
+// Connects to the mongo DB using the URI above
 mongoose.connect(URI);
 
+// create a db OBJECT and make a reference to the connection 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log("Conneced to MongoDB...");
+  console.log("Connected to MongoDB...");
 });
 
+// the inedex.js thats inside my routes folder
 let index = require('./routes/index');
 
+// express app
 let app = express();
 
 // view engine setup
@@ -35,7 +38,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', index);
 
