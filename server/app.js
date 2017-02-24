@@ -10,10 +10,10 @@ let mongoose = require('mongoose');
 
 let config = require('./config/db');
 
-let URI = config.URI;
+//let URI = config.URI;
 
 // Connects to the mongo DB using the URI above
-mongoose.connect(proccess.env.URI || config.URI);
+mongoose.connect(process.env.URI || config.URI);
 
 // create a db OBJECT and make a reference to the connection 
 let db = mongoose.connection;
