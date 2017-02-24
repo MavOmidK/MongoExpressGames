@@ -25,6 +25,7 @@ db.once('open', () => {
 
 // the inedex.js thats inside my routes folder
 let index = require('./routes/index');
+let games = require('./routes/games');
 
 // express app
 let app = express();
@@ -42,6 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', index);
+app.use('/games', games);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

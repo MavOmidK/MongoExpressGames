@@ -8,7 +8,7 @@ let mongoose = require('mongoose');
 let game = require('../models/games');
 
 /* GET home page. wildcard */
-router.get('/', (req, res, next) => {
+router.get('/', (req, rconsole.logconsole.loges, next) => {
   res.render('content/index', {
     title: 'Home'
    });
@@ -23,7 +23,7 @@ router.get('/gamelist', (req, res, next) => {
     }
     else {
       res.render('content/gamelist', {
-        title: 'About',
+        title: 'Games List',
         games: games
       });
     }
