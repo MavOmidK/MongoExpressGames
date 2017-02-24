@@ -15,14 +15,14 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET about page. */
-router.get('/about', (req, res, next) => {
+router.get('/gamelist', (req, res, next) => {
   // find all games in the games collection
   game.find((err, games) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('content/about', {
+      res.render('content/gamelist', {
         title: 'About',
         games: games
       });

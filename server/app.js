@@ -12,6 +12,7 @@ let config = require('./config/db');
 
 let URI = config.URI;
 
+
 // Connects to the mongo DB using the URI above
 mongoose.connect(URI);
 
