@@ -7,14 +7,25 @@
 
           <br>
           <h3>Games List</h3>
-          <ul>
-              <% for (let count = 0; count < games.length; count++) { %>
-                <li class="list-group-item">
-                    <%= games[count].name %>
-                </li>
-            <% } %>
 
-          </ul>
+          <table class="table table-striped table-hover table-bordered"> 
+            <th>
+              <td>Name</td>
+              <td>Cost</td>
+              <td>Rating</td>
+              <td>Edit</td>
+              <td>Delete</td>
+            </th>
+            <% for (let count = 0; count < games.length; count++) { %>
+            <tr> 
+              <td> <%= games[count].name %> </td>
+              <td> <%= games[count].cost %> </td>
+              <td> <%= games[count].rating %> </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <% } %>
+          </table>
         </div>
       </div>
     </div>

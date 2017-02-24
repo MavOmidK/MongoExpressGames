@@ -12,7 +12,8 @@ let config = require('./config/db');
 
 //let URI = config.URI;
 
-// Connects to the mongo DB using the URI above
+// Connects to the mongo DB using the URI above. 
+// If on heroku and URI available use, or use local URI
 mongoose.connect(process.env.URI || config.URI);
 
 // create a db OBJECT and make a reference to the connection 
