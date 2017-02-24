@@ -27,6 +27,33 @@ router.get('/', (req, res, next) => {
   });
 });
 
+  // GET add page - show the BLANK details pager
+  router.get('/add', (req, res, next) =>{
+    res.render('games/details', {
+      title: 'Add a New Game',
+      games: ''
+    });
+
+  
+  });
+
+  // POST add page
+  router.post('/add', (req, res, next) =>{
+    game.create({
+      "name" : req.body.name,
+      "cost": req.body.cost,
+      "rating": req.body.rating
+      }, (err, game) => {
+      if(err){
+      console.log(err);
+      res.end(err);
+    }
+    else{
+      res.redirect('/games');
+    }
+    });
+  })
+
 /* GET edit - show current game to edit */
 router.get('/:id', (req, res, next) => {
     // get a ference to the ID of the game to edit
@@ -73,12 +100,19 @@ router.post('/:id', (req, res, next) => {
     });
 });
 
+// GET delete - should delete by id
+router.get('/delete/:id', (req, res, next) => {
+  let id = req.params.id;
 
-
-
-
-module.exports = router;
-
-
+  game.remove({_id: id}, (err) =>{
+    if (err){
+      console.log(err);
+      res.end(err);
+    }
+    else{
+      res.redirect('/games');
+    }
+  });
+});
 
 module.exports = router;
