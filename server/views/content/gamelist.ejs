@@ -9,22 +9,26 @@
           <h3>Games List</h3>
 
           <table class="table table-striped table-hover table-bordered"> 
-            <th>
-              <td>Name</td>
-              <td>Cost</td>
-              <td>Rating</td>
-              <td>Edit</td>
-              <td>Delete</td>
-            </th>
-            <% for (let count = 0; count < games.length; count++) { %>
-            <tr> 
-              <td> <%= games[count].name %> </td>
-              <td> <%= games[count].cost %> </td>
-              <td> <%= games[count].rating %> </td>
+            <tr>
+              <td class="text-center">Name</td>
+              <td class="text-center">Cost</td>
+              <td class="text-center">Rating</td>
               <td></td>
               <td></td>
             </tr>
+            
+            <% for (let count = 0; count < games.length; count++) { %>
+
+            <tr> 
+              <td class="text-center"> <%= games[count].name %> </td>
+              <td class="text-center"> <%= games[count].cost %> </td>
+              <td class="text-center"> <%= games[count].rating %> </td>
+              <td class="text-center"> <a class="btn btn-primary" href="#" role="button"><i class="fa fa-pencil-square-o">Edit</i></a></td>
+              <td class="text-center"> <a class="btn btn-danger" href="#" role="button"><i class="fa fa-trash-o">Delete</i></a></td>
+            </tr>
+
             <% } %>
+
           </table>
         </div>
       </div>
