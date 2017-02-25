@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
 
   // GET add page - show the BLANK details pager
   router.get('/add', (req, res, next) =>{
-    res.render('games/details', {
+    res.render('gamereate a new s/details', {
       title: 'Add a New Game',
       games: ''
     });

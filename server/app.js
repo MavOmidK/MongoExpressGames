@@ -5,6 +5,13 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+// modules for authentication
+let session = require("express-session");
+let pasport = require("passport");
+let passportLocal = require("passport-local");
+let LocalStrategy = passportLocal.Strategy;
+let flash = require("connect-flash");
+
 // import "mongoose"
 let mongoose = require('mongoose');
 
@@ -29,6 +36,8 @@ let games = require('./routes/games');
 
 // express app
 let app = express();
+
+//
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
